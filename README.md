@@ -2,7 +2,7 @@
 The repository contains the ML protocol and data used in the [article](). Because gene cluster matrices exceed the size limit of Github, they are not included in the repository. To produce the matrices with your data, see the [protocol](/doc/geneclusters.md).
 ## Description
 
-* __main.py__ : command line script .
+* __main.py__ : command line script.
 * __MakeSplits.py__ : produce 100 differents train/test splits and save them in a given directory.
 * __Learning.py__: learning protocol with hyperparameters tuning and model performance evaluation.
 
