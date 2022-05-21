@@ -14,7 +14,7 @@ The repository contains the ML protocol and data used in the [article](). Becaus
 * [pyscm](https://github.com/aldro61/pyscm)
 * [randomscm](https://github.com/thibgo/randomscm)
 ## Usage
-#### *on a computer cluster
+*on a computer cluster
 ```
 python3 main.py -ds T2D -dt metaphlan -t $SLURM_TMPDIR
 ```
