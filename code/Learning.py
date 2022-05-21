@@ -29,7 +29,7 @@ class Learning:
             'Decision_tree': DecisionTreeClassifier,
             'random_forest': RandomForestClassifier,
             'SCM': SetCoveringMachineClassifier,
-            #'Random_SCM': RandomScmClassifier
+            'Random_SCM': RandomScmClassifier
         }
 
         self.learn()
@@ -231,8 +231,8 @@ class Learning:
                 "Decision_tree",
                 "random_forest",
                 "SCM",
-                "Random_SCM",
-                "Logistic_Regression_L2"]
+                "Random_SCM"
+                ]
         else:
             algos = [self.algo]
 
