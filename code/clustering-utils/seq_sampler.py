@@ -4,7 +4,7 @@ __author__ = "thomas deschênes"
 
 
 """ 1st argument: fasta file
-   2nd argument: headers of interest (1 header per line)
+   2nd argument: file: headers of interest(1 header per line)
    stdout: filtered fasta file """
 
 id_to_seq = {}
