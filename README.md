@@ -3,7 +3,7 @@ The repository contains the ML protocol and data used in the [article](https://g
 ## Description
 
 * __main.py__ : command line script.
-* __MakeSplits.py__ : produce 100 different train/test splits and save them in a given directory (on a computer cluster, they are cached into $SLURM_TMPDIR).
+* __MakeSplits.py__ : produce 100 different train/test splits and save them in a given directory (on a computer cluster, they are cached into $SLURM_TMPDIR for effiency purpose).
 * __Learning.py__: learning protocol with hyperparameters tuning and model performance evaluation.
 
 ## Dependencies
