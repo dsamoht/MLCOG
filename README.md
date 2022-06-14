@@ -1,4 +1,4 @@
-# Reference-free microbiome representations enhance host phenotype classification
+# Gene-based microbiome representation enhances host phenotype classification
 The repository contains the ML protocol and data used in the [article](https://github.com/dsamoht/MLCOG). Because the majority of matrices exceed the size limit of Github, they are not included in the repository. To produce the gene clusters matrices with your data, see the [protocol](/doc/geneclusters.md).
 ## Description
 
