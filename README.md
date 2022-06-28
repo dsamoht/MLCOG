@@ -7,7 +7,6 @@ The repository contains the ML protocol and data used in the [article](https://g
 * __Learning.py__: learning protocol with hyperparameters tuning and model performance evaluation.
 
 ## Dependencies
-* Python3
 * numpy, pandas, pickle
 * [scikit-learn](https://scikit-learn.org/stable/)
 * [pyscm](https://github.com/aldro61/pyscm)
