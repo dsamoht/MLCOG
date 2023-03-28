@@ -23,7 +23,7 @@ class Learning:
     """
     
     RANDOM_STATE = 0
-    DATA_PATHS = Path("../data/")
+    DATA_PATHS = Path("./data/datapaths.json")
 
     def __init__(self, datatype, task, algo, cache_dir, results_dir, selection_model_type=None):
         """
@@ -42,7 +42,7 @@ class Learning:
         self.results_dir = results_dir
         
         # edit here
-        with open("/Users/thomas/Desktop/datapaths.json", "r") as json_input:
+        with open(Learning.DATA_PATHS, "r") as json_input:
             self.data_paths = json.load(json_input)
         
         self.learn()
