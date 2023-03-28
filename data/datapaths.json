@@ -1,0 +1,6 @@
+{
+	"metadata": "../data/DATA/CMI2_metadata.csv",
+	"metaphlan": "../data/DATA/CMI2_metaphlan_relative_abundance.pkl",
+ 	"humann": "../data/DATA/CMI2_humann_pathways_relative_abundance.pkl",
+	"MERGEM_IS": "../data/DATA/MERGEM_IS_clstr_CMI2_n510.pkl"
+}
