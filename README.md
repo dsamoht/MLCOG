@@ -18,7 +18,6 @@ bl_014v5,0,1,0
 bl_024v5,1,0,0
 bl_029v2,0,1,0
 bl_022v8,1,0,0
-...
 ```
 matrices (rows: samples, columns: features):
 ```
