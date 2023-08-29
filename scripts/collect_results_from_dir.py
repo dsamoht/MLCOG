@@ -8,7 +8,8 @@ import sys
 
 import pandas as pd
 
-sys.path.append("../mlcog")
+sys.path.append(__file__.split("MLCOG/")[0]+"MLCOG/")
+import mlcog
 
 
 res_dir = sys.argv[1]
