@@ -25,7 +25,7 @@ class Learning:
     RANDOM_STATE = 0
     DATA_PATHS = Path("./data/datapaths.json")
 
-    def __init__(self, datatype, task, algo, cache_dir, results_dir, selection_model_type=None):
+    def __init__(self, datatype, task, algo, cache_dir, results_dir, selection_model_type=None, n_iter=25, n_split=10):
         """
         Run a `RandomizedSearchCV(n_iter=25)` coupled with a `RepeatedStratifiedKFold(n_splits=10, n_repeats=10)`
         for every combination of :
@@ -39,6 +39,8 @@ class Learning:
         self.algo = algo
         self.selection_model_type = selection_model_type
         self.cache_dir = cache_dir
+        self.n_iter = n_iter
+        self.n_split = n_split
         self.results_dir = results_dir
         
         # edit here
@@ -117,7 +119,7 @@ class Learning:
         
         df = self.load_pkl(self.data_paths[self.datatype])
         metadata = pd.read_csv(self.data_paths["metadata"], sep=",", index_col=0, header=0)
-        out = df.loc[set(metadata[self.task].dropna().index).intersection(df.index)]
+        out = df.loc[list(set(metadata[self.task].dropna().index).intersection(df.index))]
         out = self.keep_common_features(out).reindex(sorted(out.index))
         y = np.array(metadata.loc[out.index, self.task])
         return out, y
@@ -148,10 +150,10 @@ class Learning:
         param_grid = FeatureSelectionUtils.selector_param_grid(self.selection_model_type)
         param_grid.update(estimator_grid)
         
-        cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=10, random_state=Learning.RANDOM_STATE)
+        cv = RepeatedStratifiedKFold(n_splits=self.n_split, n_repeats=10, random_state=Learning.RANDOM_STATE)
         grid = RandomizedSearchCV(estimator=main_pipeline,
                                   param_distributions=param_grid,
-                                  n_iter=25,
+                                  n_iter=self.n_iter,
                                   scoring=scoring,
                                   n_jobs=-1,
                                   refit="balanced_accuracy",

@@ -4,7 +4,6 @@ from numpy import arange
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
-from eli5.sklearn import PermutationImportance
 
 from .identity_transformer import IdentityTransformer
 
@@ -19,11 +18,8 @@ class FeatureSelectionUtils:
         Return base estimators for feature selection of type `model_type`.
         """
         estimators = []
-        if model_type == "random_forest_permutation":
-            estimators.append(PermutationImportance(RandomForestClassifier(class_weight='balanced', random_state=1), cv=None, scoring="balanced_accuracy"))
-            raise NotImplementedError
 
-        elif model_type == "random_forest":
+        if model_type == "random_forest":
             estimators.append(RandomForestClassifier(class_weight='balanced', random_state=1))
             
         elif model_type == "elastic_net":
@@ -43,7 +39,7 @@ class FeatureSelectionUtils:
         param_grid = {
                         "selector__estimator": FeatureSelectionUtils.selector_estimators(model_type),
                         "selector__threshold": [0, 1e-5, "mean", "median", "1.5*mean"],
-                        "scaler": [StandardScaler(), MinMaxScaler(), IdentityTransformer()]
+                        "scaler": [MinMaxScaler(), IdentityTransformer()]
                     }
 
         return param_grid

@@ -39,11 +39,11 @@ with open("my_matrix.pkl", "wb") as pickled_output:
 ```
 
 ## Edit `datapaths.json`
-Include all the data types and their paths.
+Include all the data types and their corresponding path.
 
 ## Usage
 ```
-python3 main.py -a MNB -d metaphlan -c $SLURM_TMPDIR -t GlucF_SMET  -r results_dir -f elastic_net
+python main.py -a MNB -d metaphlan -c $SLURM_TMPDIR -t GlucF_SMET  -r results_dir -f elastic_net
 ```
 *you can change $SLURM_TMPDIR for another cache directory if you are not using a HPC.
 

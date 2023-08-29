@@ -3,6 +3,7 @@ __author__ = 'pier-luc plante'
 
 import sys
 
+
 currentCluster = ""
 clusterDict = {}
 samplesName=[]

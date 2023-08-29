@@ -1,12 +1,12 @@
 """Estimators instances and hyperparameters grids."""
-from sklearn.utils.fixes import loguniform
+from scipy.stats import loguniform
 from sklearn import svm
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.naive_bayes import MultinomialNB
 from pyscm import SetCoveringMachineClassifier
-#from randomscm.randomscm import RandomScmClassifier
+from randomscm import RandomScmClassifier
 from xgboost import XGBClassifier
 
 
@@ -41,7 +41,7 @@ class Estimators:
                                 'Decision_tree': DecisionTreeClassifier(),
                                 'random_forest': RandomForestClassifier(),
                                 'SCM': SetCoveringMachineClassifier(),
-                                #'Random_SCM': RandomScmClassifier
+                                'Random_SCM': RandomScmClassifier(),
                                 'XGBoost': XGBClassifier(),
                                 'MNB': MultinomialNB()
                                }
