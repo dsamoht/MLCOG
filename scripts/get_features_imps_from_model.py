@@ -1,3 +1,6 @@
+"""Throws to stdout the features used by a given model
+   sorted by magnitude of importance.
+"""
 import sys
 import numpy as np
 import pickle

@@ -47,10 +47,10 @@ python main.py -a MNB -d metaphlan -c $SLURM_TMPDIR -t GlucF_SMET  -r results_di
 ```
 *you can change $SLURM_TMPDIR for another cache directory if you are not using a HPC.
 
-## Help
-To see the different options available:
+## Testing: execute each algorithm on a toy dataset
+### (~2 minutes with 8 threads)
 ```
-python3 main.py --help
+python main.py --test
 ```
 ## Authors
 * [Thomas Deschênes](https://github.com/dsamoht)
