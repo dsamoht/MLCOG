@@ -7,7 +7,8 @@ import pickle
 import pandas as pd
 import re
 
-sys.path.append("../mlcog")
+sys.path.append(__file__.split("MLCOG/")[0]+"MLCOG/")
+import mlcog
 
 
 saved_exp = pickle.load(open(sys.argv[1], "rb"))
