@@ -5,6 +5,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from scipy.sparse import csr_matrix
 from sklearn.pipeline import Pipeline
 from sklearn.base import BaseEstimator
 from sklearn.model_selection import RepeatedStratifiedKFold, RandomizedSearchCV
@@ -15,6 +16,7 @@ from sklearn.metrics import (accuracy_score, balanced_accuracy_score, f1_score,
 
 from .estimators import Estimators
 from .feature_selection import FeatureSelectionUtils
+from .sparse_transformer import ConvertToSparse, ConvertFromSparse
 
 
 class Learning:
@@ -134,7 +136,9 @@ class Learning:
         main_pipeline = Pipeline(steps=[
             ('zero_variance_remover', VarianceThreshold(threshold=0)),
             ('scaler', StandardScaler()), # placeholder
+            ('sparse_converter', ConvertToSparse()),
             ('selector', SelectFromModel(estimator=BaseEstimator())), # placeholder
+            ('reconvert', ConvertFromSparse()),
             ('estimator', estimator)],
             memory=self.cache_dir)
         

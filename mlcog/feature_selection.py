@@ -3,7 +3,7 @@ from numpy import arange
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
+from sklearn.preprocessing import MaxAbsScaler
 
 from .identity_transformer import IdentityTransformer
 
@@ -39,7 +39,7 @@ class FeatureSelectionUtils:
         param_grid = {
                         "selector__estimator": FeatureSelectionUtils.selector_estimators(model_type),
                         "selector__threshold": [0, 1e-5, "mean", "median", "1.5*mean"],
-                        "scaler": [MinMaxScaler(), IdentityTransformer()]
+                        "scaler": [MaxAbsScaler(), IdentityTransformer()]
                     }
 
         return param_grid

@@ -128,7 +128,7 @@ class Estimators:
             estimator_grid = {"estimator__n_estimators": [30, 100],
                               "estimator__max_samples": [0.6, 0.85],
                               "estimator__max_features": [0.6, 0.85],
-                              "estimator__p_options": [ [0.1], [0.316], [0.45], [0.562], [0.65], [0.85], [1.0], [2.5], [4.39], [5.623], [7.623], [10.0] ],
+                              "estimator__p": [ [0.1], [0.316], [0.45], [0.562], [0.65], [0.85], [1.0], [2.5], [4.39], [5.623], [7.623], [10.0] ],
                               "estimator__random_state": [Estimators.RANDOM_STATE]
                              }
         
